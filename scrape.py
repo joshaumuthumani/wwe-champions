@@ -27,6 +27,7 @@ from playwright.async_api import Browser, Error as PlaywrightError, TimeoutError
 WWE_SUPERSTARS_URL = "https://www.wwe.com/superstars"
 CAGEMATCH_TITLES_URL = "https://www.cagematch.net/?id=8&nr=1&page=9"
 OUTPUT_PATH = Path("public/champions.json")
+INDEX_PATH = Path("index.html")
 NO_DEFENSE = "No Title Defenses Yet"
 
 USER_AGENTS = [
@@ -577,6 +578,23 @@ async def main() -> None:
     records = combine_records(wwe_champions, cagematch_titles)
     OUTPUT_PATH.write_text(json.dumps(records, indent=2, ensure_ascii=False) + "\n", encoding="utf-8")
     print(f"Wrote {len(records)} champion records to {OUTPUT_PATH}")
+
+    if records and records[0].get("imageUrl"):
+        update_og_image(records[0]["imageUrl"])
+
+
+def update_og_image(image_url: str) -> None:
+    if not INDEX_PATH.exists():
+        return
+    html = INDEX_PATH.read_text(encoding="utf-8")
+    updated = re.sub(
+        r'(<meta\s+(?:property="og:image"|name="twitter:image")\s+content=")[^"]*(")',
+        lambda m: m.group(1) + image_url + m.group(2),
+        html,
+    )
+    if updated != html:
+        INDEX_PATH.write_text(updated, encoding="utf-8")
+        print(f"Updated og:image to {image_url}")
 
 
 def existing_cache_as_cagematch_titles(path: Path) -> list[CagematchTitle]:
