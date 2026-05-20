@@ -1,4 +1,6 @@
-[
+{
+  "generatedAt": "2026-05-20T00:00:00-07:00",
+  "champions": [
   {
     "titleName": "Undisputed WWE Champion",
     "championName": "Cody Rhodes",
@@ -272,4 +274,5 @@
       "cagematchUrl": "https://www.cagematch.net/?id=5&nr=4799"
     }
   }
-]
+  ]
+}

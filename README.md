@@ -33,7 +33,7 @@ source .venv/bin/activate
 python scrape.py
 ```
 
-The scraper writes the final array to `public/champions.json`. If Cagematch is unavailable or blocks a request, the script still preserves WWE.com champion records with display-safe fallback values.
+The scraper writes a timestamped cache to `public/champions.json`. If Cagematch is unavailable or blocks a request, the script still preserves WWE.com champion records with display-safe fallback values.
 
 ## Run the Dashboard
 
@@ -53,17 +53,22 @@ npm run build
 
 ```json
 {
-  "titleName": "United States Champion",
-  "championName": "Trick Williams",
-  "imageUrl": "https://...",
-  "championshipDate": "April 19, 2026",
-  "daysAsChampion": 28,
-  "lastDefenseDate": "No Title Defenses Yet",
-  "daysSinceLastDefense": null,
-  "source": {
-    "wweUrl": "https://www.wwe.com/...",
-    "cagematchUrl": "https://www.cagematch.net/..."
-  }
+  "generatedAt": "2026-05-20T00:00:00-07:00",
+  "champions": [
+    {
+      "titleName": "United States Champion",
+      "championName": "Trick Williams",
+      "imageUrl": "https://...",
+      "championshipDate": "April 19, 2026",
+      "daysAsChampion": 28,
+      "lastDefenseDate": "No Title Defenses Yet",
+      "daysSinceLastDefense": null,
+      "source": {
+        "wweUrl": "https://www.wwe.com/...",
+        "cagematchUrl": "https://www.cagematch.net/..."
+      }
+    }
+  ]
 }
 ```
 

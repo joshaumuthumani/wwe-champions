@@ -560,6 +560,13 @@ def combine_records(wwe_champions: list[WweChampion], cagematch_titles: list[Cag
     return records
 
 
+def build_cache(records: list[dict]) -> dict:
+    return {
+        "generatedAt": datetime.now().astimezone().isoformat(timespec="seconds"),
+        "champions": records,
+    }
+
+
 async def main() -> None:
     OUTPUT_PATH.parent.mkdir(parents=True, exist_ok=True)
 
@@ -576,7 +583,7 @@ async def main() -> None:
         print("Cagematch scrape returned no titles; preserving existing cached Cagematch metadata.")
 
     records = combine_records(wwe_champions, cagematch_titles)
-    OUTPUT_PATH.write_text(json.dumps(records, indent=2, ensure_ascii=False) + "\n", encoding="utf-8")
+    OUTPUT_PATH.write_text(json.dumps(build_cache(records), indent=2, ensure_ascii=False) + "\n", encoding="utf-8")
     print(f"Wrote {len(records)} champion records to {OUTPUT_PATH}")
 
     if records and records[0].get("imageUrl"):
@@ -606,7 +613,14 @@ def existing_cache_as_cagematch_titles(path: Path) -> list[CagematchTitle]:
         return []
 
     titles: list[CagematchTitle] = []
-    for item in data if isinstance(data, list) else []:
+    if isinstance(data, dict) and isinstance(data.get("champions"), list):
+        items = data["champions"]
+    elif isinstance(data, list):
+        items = data
+    else:
+        items = []
+
+    for item in items:
         source = item.get("source") if isinstance(item, dict) else {}
         if not isinstance(source, dict) or not source.get("cagematchUrl"):
             continue
