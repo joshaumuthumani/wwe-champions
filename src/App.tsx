@@ -1,4 +1,4 @@
-import { AlertCircle, CalendarDays, Shield, Trophy } from 'lucide-react';
+import { AlertCircle, CalendarDays, Trophy } from 'lucide-react';
 import { useEffect, useMemo, useState } from 'react';
 
 type Champion = {
@@ -17,7 +17,7 @@ type Champion = {
 
 type LoadState =
   | { status: 'loading' }
-  | { status: 'ready'; champions: Champion[] }
+  | { status: 'ready'; champions: Champion[]; updatedAt: string }
   | { status: 'empty' }
   | { status: 'error'; message: string };
 
@@ -32,6 +32,17 @@ function isChampion(value: unknown): value is Champion {
 function formatValue(value: string | number | null | undefined, fallback = 'Unavailable') {
   if (value === null || value === undefined || value === '') return fallback;
   return value;
+}
+
+function formatLastUpdated(value: string) {
+  const date = new Date(value);
+  if (Number.isNaN(date.getTime())) return 'Last updated unavailable';
+
+  return `Last updated ${date.toLocaleDateString(undefined, {
+    month: 'long',
+    day: 'numeric',
+    year: 'numeric',
+  })}`;
 }
 
 function ChampionImage({ champion }: { champion: Champion }) {
@@ -77,14 +88,9 @@ function ChampionCard({ champion }: { champion: Champion }) {
       <ChampionImage champion={champion} />
       <div className="space-y-5 p-4">
         <div className="space-y-3">
-          <div className="flex min-h-9 items-start gap-2">
-            <span className="mt-0.5 inline-flex h-7 w-7 shrink-0 items-center justify-center rounded-md border border-gold-300/25 bg-gold-500/10 text-gold-300">
-              <Shield className="h-4 w-4" aria-hidden="true" />
-            </span>
-            <h2 className="text-pretty text-sm font-semibold leading-5 text-zinc-100">
-              {champion.titleName}
-            </h2>
-          </div>
+          <h2 className="min-h-6 text-pretty text-base font-semibold leading-6 text-zinc-100">
+            {champion.titleName}
+          </h2>
           <p className="text-balance text-2xl font-semibold leading-tight text-white">
             {champion.championName}
           </p>
@@ -147,7 +153,12 @@ export function App() {
         }
 
         if (!cancelled) {
-          setState(data.length > 0 ? { status: 'ready', champions: data } : { status: 'empty' });
+          const lastModified = response.headers.get('last-modified') || new Date().toISOString();
+          setState(
+            data.length > 0
+              ? { status: 'ready', champions: data, updatedAt: lastModified }
+              : { status: 'empty' },
+          );
         }
       } catch (error) {
         if (!cancelled) {
@@ -170,31 +181,22 @@ export function App() {
     if (state.status !== 'ready') return 'Local cache driven champion intelligence';
     return `${championCount} active championship ${championCount === 1 ? 'record' : 'records'}`;
   }, [championCount, state.status]);
+  const lastUpdated = state.status === 'ready' ? formatLastUpdated(state.updatedAt) : 'Last updated loading';
 
   return (
     <main className="min-h-screen bg-ink-950 text-white">
       <div className="mx-auto flex w-full max-w-7xl flex-col gap-8 px-4 py-6 sm:px-6 lg:px-8">
         <header className="flex flex-col gap-5 border-b border-white/10 pb-6 md:flex-row md:items-end md:justify-between">
           <div className="space-y-3">
-            <div className="inline-flex items-center gap-2 rounded-md border border-white/10 bg-white/[0.03] px-3 py-1.5 text-xs font-medium uppercase tracking-[0.18em] text-zinc-400">
+            <div className="inline-flex items-center gap-2 rounded-md border border-white/10 bg-white/[0.03] px-3 py-1.5 text-sm font-medium text-zinc-400">
               <CalendarDays className="h-3.5 w-3.5 text-gold-300" aria-hidden="true" />
-              Weekly Cache
+              {lastUpdated}
             </div>
             <div>
               <h1 className="text-3xl font-semibold tracking-normal text-white sm:text-4xl">
                 WWE Champions
               </h1>
               <p className="mt-2 text-sm text-zinc-400 sm:text-base">{subtitle}</p>
-            </div>
-          </div>
-          <div className="grid w-full grid-cols-2 gap-2 sm:w-auto">
-            <div className="rounded-lg border border-white/10 bg-ink-900 px-4 py-3">
-              <p className="text-xs uppercase tracking-[0.16em] text-zinc-500">Cache</p>
-              <p className="mt-1 text-sm font-semibold text-zinc-100">champions.json</p>
-            </div>
-            <div className="rounded-lg border border-white/10 bg-ink-900 px-4 py-3">
-              <p className="text-xs uppercase tracking-[0.16em] text-zinc-500">Source</p>
-              <p className="mt-1 text-sm font-semibold text-zinc-100">WWE + Cagematch</p>
             </div>
           </div>
         </header>
