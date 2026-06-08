@@ -4,9 +4,9 @@
     "championName": "Cody Rhodes",
     "imageUrl": "https://www.wwe.com/f/styles/wwe_1_1_540/public/2026/03/CODY_04262024gd_0100_headSawp_Profile.png",
     "championshipDate": "March 6, 2026",
-    "daysAsChampion": 87,
+    "daysAsChampion": 94,
     "lastDefenseDate": "May 31, 2026",
-    "daysSinceLastDefense": 1,
+    "daysSinceLastDefense": 8,
     "source": {
       "wweUrl": "https://www.wwe.com/superstars/cody-rhodes",
       "cagematchUrl": "https://www.cagematch.net/?id=5&nr=20"
@@ -17,9 +17,9 @@
     "championName": "Roman Reigns",
     "imageUrl": "https://www.wwe.com/f/styles/wwe_1_1_540/public/2026/05/Roman_Reigns_PROFILE.png",
     "championshipDate": "April 19, 2026",
-    "daysAsChampion": 43,
+    "daysAsChampion": 50,
     "lastDefenseDate": "May 31, 2026",
-    "daysSinceLastDefense": 1,
+    "daysSinceLastDefense": 8,
     "source": {
       "wweUrl": "https://www.wwe.com/superstars/roman-reigns",
       "cagematchUrl": "https://www.cagematch.net/?id=5&nr=6069"
@@ -30,7 +30,7 @@
     "championName": "Liv Morgan",
     "imageUrl": "https://www.wwe.com/f/styles/wwe_1_1_540/public/all/2024/06/LIV_05132024ca_023_Title_Profile--530195974e3839e08bdb34e41adbaed5.png",
     "championshipDate": "April 18, 2026",
-    "daysAsChampion": 44,
+    "daysAsChampion": 51,
     "lastDefenseDate": "No Title Defenses Yet",
     "daysSinceLastDefense": null,
     "source": {
@@ -43,9 +43,9 @@
     "championName": "Rhea Ripley",
     "imageUrl": "https://www.wwe.com/f/styles/wwe_1_1_540/public/2026/04/Rhea_04242026ca_037_Profile.png",
     "championshipDate": "April 19, 2026",
-    "daysAsChampion": 43,
+    "daysAsChampion": 50,
     "lastDefenseDate": "May 31, 2026",
-    "daysSinceLastDefense": 1,
+    "daysSinceLastDefense": 8,
     "source": {
       "wweUrl": "https://www.wwe.com/superstars/rhea-ripley",
       "cagematchUrl": "https://www.cagematch.net/?id=5&nr=2906"
@@ -56,9 +56,9 @@
     "championName": "Penta",
     "imageUrl": "https://www.wwe.com/f/styles/wwe_1_1_540/public/2026/03/Penta_03232026MM_22590_PROFILE.png",
     "championshipDate": "March 2, 2026",
-    "daysAsChampion": 91,
+    "daysAsChampion": 98,
     "lastDefenseDate": "May 25, 2026",
-    "daysSinceLastDefense": 7,
+    "daysSinceLastDefense": 14,
     "source": {
       "wweUrl": "https://www.wwe.com/superstars/penta",
       "cagematchUrl": "https://www.cagematch.net/?id=5&nr=16"
@@ -69,9 +69,9 @@
     "championName": "Trick Williams",
     "imageUrl": "https://www.wwe.com/f/styles/wwe_1_1_540/public/2026/04/Trick__04202026rf_297_PROFILE.png",
     "championshipDate": "April 19, 2026",
-    "daysAsChampion": 43,
+    "daysAsChampion": 50,
     "lastDefenseDate": "May 9, 2026",
-    "daysSinceLastDefense": 23,
+    "daysSinceLastDefense": 30,
     "source": {
       "wweUrl": "https://www.wwe.com/superstars/trick-williams",
       "cagematchUrl": "https://www.cagematch.net/?id=5&nr=62"
@@ -82,7 +82,7 @@
     "championName": "Sol Ruca",
     "imageUrl": "https://www.wwe.com/f/styles/wwe_1_1_540/public/2025/12/Sol_Ruca_PROFILE-3.png",
     "championshipDate": "May 31, 2026",
-    "daysAsChampion": 1,
+    "daysAsChampion": 8,
     "lastDefenseDate": "No Title Defenses Yet",
     "daysSinceLastDefense": null,
     "source": {
@@ -95,9 +95,9 @@
     "championName": "Tiffany Stratton",
     "imageUrl": "https://www.wwe.com/f/styles/wwe_1_1_540/public/2026/05/Tiffany_Stratton_PROFILE%202.png",
     "championshipDate": "April 24, 2026",
-    "daysAsChampion": 38,
+    "daysAsChampion": 45,
     "lastDefenseDate": "May 22, 2026",
-    "daysSinceLastDefense": 10,
+    "daysSinceLastDefense": 17,
     "source": {
       "wweUrl": "https://www.wwe.com/superstars/tiffany-stratton",
       "cagematchUrl": "https://www.cagematch.net/?id=5&nr=7151"
@@ -106,11 +106,11 @@
   {
     "titleName": "World Tag Team Champions",
     "championName": "The Vision",
-    "imageUrl": "https://www.wwe.com/f/styles/wwe_1_1_540/public/2026/03/20260330_TheVision.png",
+    "imageUrl": "https://www.wwe.com/f/styles/wwe_1_1_540/public/2026/06/20260602_TheVision.png",
     "championshipDate": "March 30, 2026",
-    "daysAsChampion": 63,
+    "daysAsChampion": 70,
     "lastDefenseDate": "May 23, 2026",
-    "daysSinceLastDefense": 9,
+    "daysSinceLastDefense": 16,
     "source": {
       "wweUrl": "https://www.wwe.com/superstars/austin-theory",
       "cagematchUrl": "https://www.cagematch.net/?id=5&nr=61"
@@ -121,9 +121,9 @@
     "championName": "Damian Priest & R-Truth",
     "imageUrl": "https://www.wwe.com/f/styles/wwe_1_1_540/public/2026/04/20260410_PriestRTruth.png",
     "championshipDate": "March 20, 2026",
-    "daysAsChampion": 73,
+    "daysAsChampion": 80,
     "lastDefenseDate": "May 1, 2026",
-    "daysSinceLastDefense": 31,
+    "daysSinceLastDefense": 38,
     "source": {
       "wweUrl": "https://www.wwe.com/superstars/damian-priest",
       "cagematchUrl": "https://www.cagematch.net/?id=5&nr=3117"
@@ -134,9 +134,9 @@
     "championName": "Brie Bella & Paige",
     "imageUrl": "https://www.wwe.com/f/styles/wwe_1_1_540/public/2026/05/20260518_BriePaige.png",
     "championshipDate": "April 18, 2026",
-    "daysAsChampion": 44,
+    "daysAsChampion": 51,
     "lastDefenseDate": "May 23, 2026",
-    "daysSinceLastDefense": 9,
+    "daysSinceLastDefense": 16,
     "source": {
       "wweUrl": "https://www.wwe.com/superstars/brie-bella",
       "cagematchUrl": "https://www.cagematch.net/?id=5&nr=4066"
@@ -147,9 +147,9 @@
     "championName": "Tony D'Angelo",
     "imageUrl": "https://www.wwe.com/f/styles/wwe_1_1_540/public/2026/04/tony_dangelo_PROFILE%202.png",
     "championshipDate": "April 4, 2026",
-    "daysAsChampion": 58,
-    "lastDefenseDate": "April 17, 2026",
-    "daysSinceLastDefense": 45,
+    "daysAsChampion": 65,
+    "lastDefenseDate": "June 2, 2026",
+    "daysSinceLastDefense": 6,
     "source": {
       "wweUrl": "https://www.wwe.com/superstars/tony-dangelo",
       "cagematchUrl": "https://www.cagematch.net/?id=5&nr=1789"
@@ -160,9 +160,9 @@
     "championName": "Lola Vice",
     "imageUrl": "https://www.wwe.com/f/styles/wwe_1_1_540/public/2026/04/Lola-Vice_04072026MP_0249_PROFILE.png",
     "championshipDate": "April 4, 2026",
-    "daysAsChampion": 58,
+    "daysAsChampion": 65,
     "lastDefenseDate": "May 26, 2026",
-    "daysSinceLastDefense": 6,
+    "daysSinceLastDefense": 13,
     "source": {
       "wweUrl": "https://www.wwe.com/superstars/lola-vice",
       "cagematchUrl": "https://www.cagematch.net/?id=5&nr=2021"
@@ -173,9 +173,9 @@
     "championName": "Myles Borne",
     "imageUrl": "https://www.wwe.com/f/styles/wwe_1_1_540/public/2026/04/mylses_borne_PROFILE.png",
     "championshipDate": "February 24, 2026",
-    "daysAsChampion": 97,
+    "daysAsChampion": 104,
     "lastDefenseDate": "April 28, 2026",
-    "daysSinceLastDefense": 34,
+    "daysSinceLastDefense": 41,
     "source": {
       "wweUrl": "https://www.wwe.com/superstars/myles-borne",
       "cagematchUrl": "https://www.cagematch.net/?id=5&nr=3679"
@@ -186,9 +186,9 @@
     "championName": "Tatum Paxley",
     "imageUrl": "https://www.wwe.com/f/styles/wwe_1_1_540/public/2026/03/Tatum-Paxley_03102026MP_0009_Profile_0.png",
     "championshipDate": "March 7, 2026",
-    "daysAsChampion": 86,
+    "daysAsChampion": 93,
     "lastDefenseDate": "May 19, 2026",
-    "daysSinceLastDefense": 13,
+    "daysSinceLastDefense": 20,
     "source": {
       "wweUrl": "https://www.wwe.com/superstars/tatum-paxley",
       "cagematchUrl": "https://www.cagematch.net/?id=5&nr=6827"
@@ -199,9 +199,9 @@
     "championName": "The Vanity Project",
     "imageUrl": "https://www.wwe.com/f/styles/wwe_1_1_540/public/2026/02/20260224_SmokeBaylor.png",
     "championshipDate": "February 24, 2026",
-    "daysAsChampion": 97,
+    "daysAsChampion": 104,
     "lastDefenseDate": "May 19, 2026",
-    "daysSinceLastDefense": 13,
+    "daysSinceLastDefense": 20,
     "source": {
       "wweUrl": "https://www.wwe.com/superstars/ricky-smokes",
       "cagematchUrl": "https://www.cagematch.net/?id=5&nr=1912"
@@ -212,9 +212,9 @@
     "championName": "Lexis King",
     "imageUrl": "https://www.wwe.com/f/styles/wwe_1_1_540/public/2026/04/lexis_king_PROFILE.png",
     "championshipDate": "April 21, 2026",
-    "daysAsChampion": 41,
-    "lastDefenseDate": "No Title Defenses Yet",
-    "daysSinceLastDefense": null,
+    "daysAsChampion": 48,
+    "lastDefenseDate": "June 2, 2026",
+    "daysSinceLastDefense": 6,
     "source": {
       "wweUrl": "https://www.wwe.com/superstars/lexis-king",
       "cagematchUrl": "https://www.cagematch.net/?id=5&nr=6760"
@@ -225,7 +225,7 @@
     "championName": "Wren Sinclair",
     "imageUrl": "https://www.wwe.com/f/styles/wwe_1_1_540/public/2026/03/Wren-Sinclair_03242026MP_0794_Profile.png",
     "championshipDate": "March 17, 2026",
-    "daysAsChampion": 76,
+    "daysAsChampion": 83,
     "lastDefenseDate": "No Title Defenses Yet",
     "daysSinceLastDefense": null,
     "source": {
@@ -238,9 +238,9 @@
     "championName": "Aaron Rourke",
     "imageUrl": "https://www.wwe.com/f/styles/wwe_1_1_540/public/2026/03/AaronRourke_02202026AK_0224_Profile.png",
     "championshipDate": "February 20, 2026",
-    "daysAsChampion": 101,
+    "daysAsChampion": 108,
     "lastDefenseDate": "May 15, 2026",
-    "daysSinceLastDefense": 17,
+    "daysSinceLastDefense": 24,
     "source": {
       "wweUrl": "https://www.wwe.com/superstars/aaron-rourke",
       "cagematchUrl": "https://www.cagematch.net/?id=5&nr=7436"
@@ -251,25 +251,12 @@
     "championName": "Wendy Choo",
     "imageUrl": "https://www.wwe.com/f/styles/wwe_1_1_540/public/2026/04/WendyChoo_03202026AK_03709_Profile.png",
     "championshipDate": "March 20, 2026",
-    "daysAsChampion": 73,
-    "lastDefenseDate": "April 10, 2026",
-    "daysSinceLastDefense": 52,
+    "daysAsChampion": 80,
+    "lastDefenseDate": "May 1, 2026",
+    "daysSinceLastDefense": 38,
     "source": {
       "wweUrl": "https://www.wwe.com/superstars/wendy-choo",
       "cagematchUrl": "https://www.cagematch.net/?id=5&nr=7435"
-    }
-  },
-  {
-    "titleName": "NXT Heritage Cup",
-    "championName": "Channing \"Stacks\" Lorenzo",
-    "imageUrl": "https://www.wwe.com/f/styles/wwe_1_1_540/public/all/2024/05/Channing-Stacks-Lorenzo-%26-Tony_11142023AK_00865_PROFILE--5adcc2ffec1e93bc730d7529b184d776.png",
-    "championshipDate": "June 24, 2025",
-    "daysAsChampion": 342,
-    "lastDefenseDate": "No Title Defenses Yet",
-    "daysSinceLastDefense": null,
-    "source": {
-      "wweUrl": "https://www.wwe.com/superstars/channing-stacks-lorenzo",
-      "cagematchUrl": "https://www.cagematch.net/?id=5&nr=4799"
     }
   }
 ]
