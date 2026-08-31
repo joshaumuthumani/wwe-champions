@@ -3,6 +3,8 @@ name: Graphify
 on:
   pull_request:
     branches: [main]
+  push:
+    branches: [main]
 
 concurrency:
   group: graphify-${{ github.ref }}
@@ -15,7 +17,7 @@ jobs:
     steps:
       - uses: actions/checkout@v4
         with:
-          ref: ${{ github.event.pull_request.head.sha }}
+          ref: ${{ github.event.pull_request.head.sha || github.sha }}
           fetch-depth: 0
 
       - uses: actions/setup-python@v5
@@ -33,7 +35,7 @@ jobs:
       # works on a fresh clone with zero credentials.
       - name: Assert graph freshness
         env:
-          HEAD_SHA: ${{ github.event.pull_request.head.sha }}
+          HEAD_SHA: ${{ github.event.pull_request.head.sha || github.sha }}
         run: ./.github/scripts/graphify-gate.sh "$HEAD_SHA"
 
       # Doc/semantic layer via OpenRouter only. Advisory — a provider outage
@@ -63,6 +65,6 @@ jobs:
         if: always()
         uses: actions/upload-artifact@v4
         with:
-          name: graphify-out-${{ github.event.pull_request.head.sha }}
+          name: graphify-out-${{ github.event.pull_request.head.sha || github.sha }}
           path: graphify-out/
           retention-days: 14
