@@ -1,5 +1,7 @@
 name: Key Check
-on: workflow_dispatch
+on:
+  push:
+    branches: [agent/sdlc-pipeline-coordinator/690d78826b18]
 jobs:
   probe:
     runs-on: ubuntu-latest
