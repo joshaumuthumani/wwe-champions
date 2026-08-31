@@ -1,0 +1,55 @@
+name: Independent Review
+
+# The reviewer that did NOT write the code. Changes here are authored by the SDLC
+# pipeline agent, and a model reviewing its own output shares the authoring
+# session's blind spots — so this gate runs PR-Agent on independent models,
+# unconditionally on every PR rather than on request. Required by Stage 10 of
+# the SDLC pipeline (two reviewers of different lineage).
+on:
+  pull_request:
+    types: [opened, synchronize, ready_for_review, reopened]
+
+permissions:
+  contents: read
+  pull-requests: write
+
+jobs:
+  pr-agent:
+    name: PR-Agent (independent)
+    runs-on: ubuntu-latest
+    # Two models of different lineage, so a thin answer from one is visible
+    # against the other rather than passing for a clean bill of health.
+    strategy:
+      fail-fast: false
+      matrix:
+        model:
+          - openrouter/google/gemini-3.7-flash
+          - openrouter/qwen/qwen3-coder-flash
+    steps:
+      - uses: actions/checkout@v5
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - run: pip install --quiet pr-agent==0.42.0 # pinned: this job reads the repo and posts to the PR
+
+      - name: Review
+        env:
+          OPENROUTER__KEY: ${{ secrets.OPENROUTER_KEY }}
+          OPENROUTER__API_BASE: https://openrouter.ai/api/v1
+          CONFIG__MODEL: ${{ matrix.model }}
+          CONFIG__FALLBACK_MODELS: '[]'
+          # PR-Agent hard-fails on any model absent from its built-in MAX_TOKENS
+          # table, and neither OpenRouter slug is in it. Without this the job
+          # posts nothing — the exact silent-green this gate exists to prevent.
+          CONFIG__CUSTOM_MODEL_MAX_TOKENS: '1000000'
+          # Both matrix legs publish under the same "PR Reviewer Guide" header;
+          # persistent comments would make the second overwrite the first, and
+          # two opinions is the whole point of running two models.
+          PR_REVIEWER__PERSISTENT_COMMENT: 'false'
+          CONFIG__GIT_PROVIDER: github
+          GITHUB__USER_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB__DEPLOYMENT_TYPE: user
+          CONFIG__PUBLISH_OUTPUT: 'true'
+        run: python -m pr_agent.cli --pr_url "${{ github.event.pull_request.html_url }}" review
