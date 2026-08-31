@@ -22,8 +22,11 @@ jobs:
         with:
           python-version: "3.12"
 
+      # The [openai] extra is required for the doc layer: without it the
+      # OpenRouter pass fails every chunk with "the 'openai' package is
+      # required for this backend". The code layer alone does not need it.
       - name: Install graphify (pinned)
-        run: pipx install graphifyy==0.9.53
+        run: pipx install "graphifyy[openai]==0.9.53"
 
       # Code layer is pure AST inside the runner: no key, no network, no local
       # machine involved. This is what the gate asserts on, which is why it
@@ -47,7 +50,14 @@ jobs:
             echo "::warning::OPENROUTER_KEY not set — doc layer not refreshed"
             exit 0
           fi
-          graphify extract . --backend openai --update
+          graphify extract . --backend openai --update 2>&1 | tee /tmp/doc.log
+          # Graphify exits 0 even when every semantic chunk fails, so the exit
+          # code is not evidence. Surface the failure explicitly instead.
+          if grep -q "semantic chunk(s) failed" /tmp/doc.log; then
+            echo "::warning::doc layer failed — code gate unaffected, doc nodes stale"
+          else
+            echo "doc layer refreshed via OpenRouter"
+          fi
 
       - name: Upload graph evidence
         if: always()
