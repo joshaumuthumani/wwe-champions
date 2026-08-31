@@ -19,10 +19,12 @@
     "blocking": false
   },
   "last_refresh": {
-    "commit": "ce24d035840461dff4ed69263e322d271bf53639",
-    "nodes": 134,
-    "edges": 216,
+    "commit": "a9c4cd3f071039ae51e0c9e12436266907f3c059",
+    "nodes": 136,
+    "edges": 217,
     "result": "success",
-    "layer": "code"
+    "layer": "code",
+    "checkpoint": "post_merge",
+    "refreshed_at": "2026-08-31T04:05:00Z"
   }
 }
